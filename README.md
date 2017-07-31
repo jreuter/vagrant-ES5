@@ -37,7 +37,7 @@ To check that it build correctly and the port forwarding is working, open a brow
 
 ## Add some test data (optional)
 
-You can use the file `accounts.json` in this repo.
+You can use the file `accounts.json` in this repo.  The data originally came from [here][1]
 
         curl -H "Content-Type: application/json" -XPOST 'localhost:9200/bank/account/_bulk?pretty&refresh' --data-binary "@accounts.json"
 
@@ -53,4 +53,7 @@ You should see data like this:
 ## Troubleshooting
 
 You can use `vagrant ssh` to log into the box and look for errors in `/var/log/elasticsearch/elasticsearch.log`.  If there are no files in this directory check `/var/log/syslog` for errors.  You can also use the command `netstat -nlp` to see if ElasticSearch is running on port `9200`.
+
+## References
+[1]: https://www.elastic.co/guide/en/elasticsearch/reference/5.5/_exploring_your_data.html "ES5 - Exploring your data"
 
